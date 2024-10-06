@@ -1,0 +1,19 @@
+name: List Files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  list_files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: List Files
+      run: |
+        echo "Listing files in the repository:"
+        ls -R
